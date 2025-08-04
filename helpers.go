@@ -2,7 +2,21 @@ package uuid
 
 import (
 	"fmt"
+	"github.com/google/uuid"
 )
+
+func (uuid *UUID) UUID() *uuid.UUID {
+	if uuid == nil {
+		return nil
+	}
+
+	validatedUUID, err := Parse(uuid.GetVal())
+	if err != nil {
+		return nil
+	}
+
+	return &validatedUUID.UUID
+}
 
 // StringToProto converts a string UUID to protobuf UUID with validation
 func StringToProto(s string) (*UUID, error) {

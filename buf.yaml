@@ -1,2 +1,10 @@
 version: v2
-name: buf.build/alex-held/uuid
+modules:
+  - path: proto
+    name: buf.build/alex-held/uuid
+lint:
+  use:
+    - STANDARD
+breaking:
+  use:
+    - FILE
