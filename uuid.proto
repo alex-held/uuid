@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package alexheld.uuid.v1;
+
+option go_package = "github.com/alex-held/uuid;uuid";
+
+// UUID represents a universally unique identifier with validation
+message UUID {
+  string val = 1;
+}
